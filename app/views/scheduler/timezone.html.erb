@@ -1,0 +1,45 @@
+<% provide(:title, "Time Zone") %>
+
+
+<script>
+  // NOT USED But a good example of using javascript for post:
+  var timeZone = "Mountain";
+  function timeZoneFunction(v) {
+    var x = document.getElementById("TimeZoneCombo");
+    //var exp = document.getElementById("t2");
+    var i = 0;
+    var xhr = new XMLHttpRequest();
+    //var timeZone = "Mountain";
+    for (i = 0; i < 4; i++)
+    {
+      console.log("i: " + i + " selected? " + v[i].selected);
+      if (v[i].selected)
+      {
+        timeZone = v[i].value;
+        break;
+      }
+    }
+    console.log("Time Zone Combobox changed:  " + timeZone);
+    xhr.open("POST", "/scheduler_pages/timezone", true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.send(JSON.stringify({
+      zone : timeZone
+    }));
+  }
+</script>
+
+
+<h1 class="ml-1">Time Zone</h1>
+
+<h2 class="ml-1">Select time zone where you reside at:</h2>
+<div class="container">
+  <%= form_for @scheduler do |f| %>
+    <div class="row">
+      <div class="col">
+        <%= f.select :timezone, ["pacific","mountain","central","atlantic","other"]%><br class="dbl_space">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
