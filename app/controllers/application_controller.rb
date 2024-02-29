@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
+  @@dayTimeAndZone = ["","",""]
+
   def hello
     # render text: "hello Koko fans!"
     render plain: "hello Koko fans!"

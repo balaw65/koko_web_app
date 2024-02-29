@@ -5,6 +5,8 @@ ruby "3.1.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
 gem "bootstrap-sass", "~> 3.4.1"
+gem "minitest", "~> 5.22", ">= 5.22.2"
+gem "minitest-reporters", "~> 1.1", ">= 1.1.11"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

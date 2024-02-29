@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   def new
     logger.debug "-----> new called"
 
+
+
     @timeslot= getScheduleTime()
     @zaTimeZone = @timeslot.third
     @zaLessonTime = @timeslot.first
