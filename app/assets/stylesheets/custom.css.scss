@@ -1,0 +1,58 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@gray-medium-light: #eaeaea;
+
+.mixin_box_sizing {
+  -moz-box-sizing:      border-box;
+  -webkit-box-sizing:   border-box;
+  box-sizing:           border-box;
+}
+
+body {
+   padding-top: 60px;
+}
+section {
+   overflow: auto;
+}
+textarea {
+   resize: vertical;
+}
+.center {
+  margin-top: 10px;
+  text-align: center;
+}
+.center h1 {
+  margin-bottom: 10px;
+}
+.row {
+  margin-left: 100px;
+}
+.col {
+  margin-top: 30px;
+}
+.dbl_space {
+  margin-bottom: 30px;
+}
+.ml-1 {
+  padding-left: 50px;
+}
+.error_description {
+  background-color:yellow;
+  color:red;
+}
+p.instructions {
+  margin-top: 30px;
+  padding-left: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.0em;
+  font-weight:normal;
+}
+
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
