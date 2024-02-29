@@ -1,0 +1,72 @@
+<% provide(:title, 'Your Info') %>
+
+<style>
+   th, td {
+      padding-top:20px;
+      padding-left:40px;
+      padding-right:40px;
+   }
+   #btn {
+     align:center;
+   }
+   input#user_timezone {
+     background-color:Gray;
+   }
+   input#user_lessontime {
+     background-color:Gray;
+   }
+   input#user_lessonday {
+     background-color:Gray;
+   }
+   td#required {
+     font-size: 20px;
+     color:Darkred;
+   }
+   td#tdcenter {
+     text-align:center;
+   }
+
+
+</style>
+ 
+<h1 class="ml-1">Initial/introductory Lesson</h1>
+
+<div class="container">
+  <table>
+    <%= form_for(@user) do |f| %>
+      <tr rowspan:2>
+        <td><%= render 'shared/error_messages' %>
+      </tr>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td id="required"><%= f.text_field :name, size:"40" %>&nbsp;&nbsp;*</td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td id="required"><%= f.email_field :email, size:"40" %>&nbsp;&nbsp;*</td>
+      </tr>
+      <tr>
+        <td><%= f.label :timezone %></td>
+        <td><%= f.text_field :timezone, value: @zaTimeZone, readonly: true, size:"50"  %></td>
+        </tr>
+       <tr>
+        <td><%= f.label :lessontime %></td>
+        <td><%= f.text_field :lessontime, value: @zaLessonTime, readonly: true, size:"50"  %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :lessonday %></td>
+        <td><%= f.text_field :lessonday, value: @zaLessonDay, readonly: true, size:"50"  %></td>
+      </tr>
+      <tr rowspan:2>
+        <td><%= f.password_field :password, value: "p4ssw0rdp4ssw0rd", type: "hidden" %></td>
+      </tr>
+      <tr rowspan:2>
+        <td><%= f.password_field :password_confirmation, value: "p4ssw0rdp4ssw0rd", type:"hidden" %></td>
+      </tr>
+      <tr rowspan:2>
+        <td id='tdcenter'><%= f.submit "Submit", class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

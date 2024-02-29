@@ -1,0 +1,148 @@
+<br><br><center><h2>Click on a green box to schedule your introductory lesson:</h2></center><br><br>
+
+<style>
+   th, td {
+      padding-left:40px;
+      padding-right:40px;
+      border: 2px solid black;
+   }
+   td#mon1 {
+     background-color:Green;
+   }
+   td#tue1 {
+     background-color:Green;
+   }
+   td#wed1 {
+     background-color:Green;
+   }
+   td#thu1 {
+     background-color:Green;
+   }
+   td#mon2 {
+     background-color:Green;
+   }
+   td#tue2 {
+     background-color:Green;
+   }
+   td#wed2 {
+     background-color:Green;
+   }
+   td#thu2 {
+     background-color:Green;
+   }
+   td#mon3 {
+     background-color:Green;
+   }
+   td#tue3 {
+     background-color:Green;
+   }
+   td#wed3 {
+     background-color:Green;
+   }
+   td#thu3 {
+     background-color:Green;
+   }
+   td#mon4 {
+     background-color:Green;
+   }
+   td#tue4 {
+     background-color:Green;
+   }
+   td#wed4 {
+     background-color:Green;
+   }
+   td#thu4 {
+     background-color:Green;
+   }
+   td#mon5 {
+     background-color:Green;
+   }
+   td#tue5 {
+     background-color:Green;
+   }
+   td#wed5 {
+     background-color:Green;
+   }
+   td#thu5 {
+     background-color:Green;
+   }
+ 
+</style>
+<script>
+  var timeZone = "Mountain";
+  function delay(milliseconds) {
+    return new Promise(resolve => {
+      setTimeout(resolve, milliseconds);
+    });
+  }
+  function selectFunction(v,d,t) {
+    var x = document.getElementById(v);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/scheduler/day", true);
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.send(JSON.stringify({
+      day : d,
+      time: t,
+      zone: timeZone //"MST"
+    }));
+
+    // GET:
+//  xhr.open("GET", "/scheduler_pages/day", true);
+//  xhr.send();
+
+      
+    x.style.backgroundColor="gray";
+    
+    delay(1000).then(() => {
+      console.log("Redirecting to new page for time zone: " + timeZone);
+      //window.location.href='/';
+      window.location.href='/users/new';
+    });
+
+  }
+</script>
+
+<center>
+ <table>
+    <tr>
+      <th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th>
+    </tr>
+    <tr>
+      <td><h4 id="t1"><%=@timesByZone.first%></h4></td>
+      <td id="mon1" onclick="selectFunction('mon1','Monday','12pm to 1pm')"></td>
+      <td id="tue1" onclick="selectFunction('tue1','Tuesday','12pm to 1pm')"></td>
+      <td id="wed1" onclick="selectFunction('wed1','Wednesday','12pm to 1pm')"></td>
+      <td id="thu1" onclick="selectFunction('thu1','Thursday','12pm to 1pm')"></td>
+    </tr>
+    <tr>
+      <td id="t2"><h4><%=@timesByZone.second%></h4></td>
+      <td id="mon2" onclick="selectFunction('mon2','Monday','1pm to 2pm')"></td>
+      <td id="tue2" onclick="selectFunction('tue2','Tuesday','1pm to 2pm')"></td>
+      <td id="wed2" onclick="selectFunction('wed2','Wednesday','1pm to 2pm')"></td>
+      <td id="thu2" onclick="selectFunction('thu2','Thursday','1pm to 2pm')"></td>
+    </tr>
+    <tr>
+      <td><h4><%=@timesByZone.third%></h4></td>
+      <td id="mon3" onclick="selectFunction('mon3','Monday','2pm to 3pm')"></td>
+      <td id="tue3" onclick="selectFunction('tue3','Tuesday','2pm to 3pm')"></td>
+      <td id="wed3" onclick="selectFunction('wed3','Wednesday','2pm to 3pm')"></td>
+      <td id="thu3" onclick="selectFunction('thu3','Thursday','2pm to 3pm')"></td>
+    </tr>
+    <tr>
+      <td><h4><%=@timesByZone.fourth%></h4></td>
+      <td id="mon4" onclick="selectFunction('mon4','Monday','3pm to 4pm')"></td>
+      <td id="tue4" onclick="selectFunction('tue4','Tuesday','3pm to 4pm')"></td>
+      <td id="wed4" onclick="selectFunction('wed4','Wednesday','3pm to 4pm')"></td>
+      <td id="thu4" onclick="selectFunction('thu4','Thursday','3pm to 4pm')"></td>
+    </tr>
+    <tr>
+      <td><h4><%=@timesByZone.fifth%></h4></td>
+      <td id="mon5" onclick="selectFunction('mon5','Monday','4pm to 5pm')"></td>
+      <td id="tue5" onclick="selectFunction('tue5','Tuesday','4pm to 5pm')"></td>
+      <td id="wed5" onclick="selectFunction('wed5','Wednesday','4pm to 5pm')"></td>
+      <td id="thu5" onclick="selectFunction('thu5','Thursday','4pm to 5pm')"></td>
+    </tr>
+  </table>
+</center>
+
+
