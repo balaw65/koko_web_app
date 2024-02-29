@@ -33,3 +33,33 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore the following ROR Files:
+Dockerfile
+Gemfile.lock
+Rakefile
+.*.swp
+app/assets/config
+app/assets/images/.keep
+app/channels/
+app/controllers/.*.swp
+app/controllers/concerns/
+app/helpers/
+app/jobs/
+app/mailers/
+app/models/concerns/
+bin/
+config.ru
+config
+!config/routes.rb
+db/
+lib/
+log/
+public/
+storage/
+test/
+tmp/
+vendor/
+
+
+

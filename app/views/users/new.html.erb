@@ -18,6 +18,10 @@
    input#user_lessonday {
      background-color:Gray;
    }
+   input#user_usertype {
+     background-color:Gray;
+   }
+ 
    td#required {
      font-size: 20px;
      color:Darkred;
@@ -56,6 +60,10 @@
       <tr>
         <td><%= f.label :lessonday %></td>
         <td><%= f.text_field :lessonday, value: @zaLessonDay, readonly: true, size:"50"  %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :usertype %></td>
+        <td><%= f.text_field :usertype, value: "guest", readonly: true, size:"50"  %></td>
       </tr>
       <tr rowspan:2>
         <td><%= f.password_field :password, value: "p4ssw0rdp4ssw0rd", type: "hidden" %></td>
