@@ -44,13 +44,11 @@ app/assets/images/.keep
 app/channels/
 app/controllers/.*.swp
 app/controllers/concerns/
-app/helpers/
 app/jobs/
 app/mailers/
 app/models/concerns/
 bin/
 config.ru
-config
 !config/routes.rb
 db/
 lib/

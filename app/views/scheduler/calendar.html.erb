@@ -6,65 +6,207 @@
       padding-right:40px;
       border: 2px solid black;
    }
+
    td#mon1 {
      background-color:Green;
    }
+   td#mon1Yellow {
+     background-color:Yellow;
+   }
+   td#mon1Red {
+     background-color:Red;
+   }
+ 
    td#tue1 {
      background-color:Green;
    }
+   td#tue1Yellow {
+     background-color:Yellow;
+   }
+   td#tue1Red {
+     background-color:Red;
+   }
+
+
+
    td#wed1 {
      background-color:Green;
    }
+   td#wed1Yellow {
+     background-color:Yellow;
+   }
+   td#wed1red {
+     background-color:Red;
+   }
+ 
    td#thu1 {
      background-color:Green;
    }
+   td#thu1Yellow {
+     background-color:Yellow;
+   }
+   td#thu1Red {
+     background-color:Red;
+   }
+ 
    td#mon2 {
      background-color:Green;
    }
+   td#mon2Yellow {
+     background-color:Yellow;
+   }
+   td#mon2Red {
+     background-color:Red;
+   }
+
    td#tue2 {
      background-color:Green;
    }
+   td#tue2Yellow {
+     background-color:Yellow;
+   }
+   td#tue2Red {
+     background-color:Red;
+   }
+
    td#wed2 {
      background-color:Green;
    }
+   td#wed2Yellow {
+     background-color:Yellow;
+   }
+   td#wed2Red {
+     background-color:Red;
+   }
+
    td#thu2 {
      background-color:Green;
    }
+   td#thu2Yellow {
+     background-color:Yellow;
+   }
+   td#thu2Red {
+     background-color:Red;
+   }
+
    td#mon3 {
      background-color:Green;
    }
+   td#mon3Yellow {
+     background-color:Yellow;
+   }
+   td#mon3Red {
+     background-color:Red;
+   }
+
    td#tue3 {
      background-color:Green;
    }
+   td#tue3Yellow {
+     background-color:Yellow;
+   }
+   td#tue3Red {
+     background-color:Red;
+   }
+
    td#wed3 {
      background-color:Green;
    }
+   td#wed3Yellow {
+     background-color:Yellow;
+   }
+   td#wed3Red {
+     background-color:Red;
+   }
+
    td#thu3 {
      background-color:Green;
    }
+   td#thu3Yellow {
+     background-color:Yellow;
+   }
+   td#thu3Red {
+     background-color:Red;
+   }
+
    td#mon4 {
      background-color:Green;
    }
+   td#mon4Yellow {
+     background-color:Yellow;
+   }
+   td#mon4Red {
+     background-color:Red;
+   }
+
    td#tue4 {
      background-color:Green;
    }
+   td#tue4Yellow {
+     background-color:Yellow;
+   }
+   td#tue4Red {
+     background-color:Red;
+   }
+
    td#wed4 {
      background-color:Green;
    }
+   td#wed4Yellow {
+     background-color:Yellow;
+   }
+   td#wed4Red {
+     background-color:Red;
+   }
+
    td#thu4 {
      background-color:Green;
    }
+   td#thu4Yellow {
+     background-color:Yellow;
+   }
+   td#thu4Red {
+     background-color:Red;
+   }
+
    td#mon5 {
      background-color:Green;
    }
+   td#mon5Yellow {
+     background-color:Yellow;
+   }
+   td#mon5Red {
+     background-color:Red;
+   }
+
    td#tue5 {
      background-color:Green;
    }
+   td#tue5Yellow {
+     background-color:Yellow;
+   }
+   td#tue5Red {
+     background-color:Red;
+   }
+
    td#wed5 {
      background-color:Green;
    }
+   td#wed5Yellow {
+     background-color:Yellow;
+   }
+   td#wed5Red {
+     background-color:Red;
+   }
+
    td#thu5 {
      background-color:Green;
+   }
+   td#thu5Yellow {
+     background-color:Yellow;
+   }
+   td#thu5Red {
+     background-color:Red;
    }
  
 </style>
@@ -75,15 +217,55 @@
       setTimeout(resolve, milliseconds);
     });
   }
+  function testFunction(v,d,t) {
+    console.log("Test Function Called");
+    var x = document.getElementById(v);
+    console.log("Test Function Got here 1");
+ 
+    var xhr = new XMLHttpRequest();
+    console.log("Test Function Got here 2");
+ 
+    xhr.open("POST", "/scheduler/day", true);
+    console.log("Test Function Got here 3");
+ 
+    xhr.setRequestHeader('Content-Type','application/json');
+    console.log("Test Function Got here 4");
+ 
+    xhr.send(JSON.stringify({
+      day : d,
+      time: t,
+      zone: z //timeZone //"MST"
+    }));
+    console.log("Test Function Got here 5");
+ 
+    // GET:
+//  xhr.open("GET", "/scheduler_pages/day", true);
+//  xhr.send();
+
+      
+    x.style.backgroundColor="gray";
+    
+    delay(1000).then(() => {
+      console.log("Redirecting to new page for time zone: " + timeZone);
+      //window.location.href='/';
+      window.location.href='/users/new';
+    });
+
+
+  }
+ 
   function selectFunction(v,d,t) {
+    console.log("Select Function Called");
+ 
     var x = document.getElementById(v);
     var xhr = new XMLHttpRequest();
+    var z = "MST"
     xhr.open("POST", "/scheduler/day", true);
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.send(JSON.stringify({
       day : d,
       time: t,
-      zone: timeZone //"MST"
+      zone: z //timeZone //"MST"
     }));
 
     // GET:
@@ -109,38 +291,212 @@
     </tr>
     <tr>
       <td><h4 id="t1"><%=@timesByZone.first%></h4></td>
-      <td id="mon1" onclick="selectFunction('mon1','Monday','12pm to 1pm')"></td>
-      <td id="tue1" onclick="selectFunction('tue1','Tuesday','12pm to 1pm')"></td>
-      <td id="wed1" onclick="selectFunction('wed1','Wednesday','12pm to 1pm')"></td>
-      <td id="thu1" onclick="selectFunction('thu1','Thursday','12pm to 1pm')"></td>
+
+<!-- UTC TIME IN THIS COLUMN IS 19 Pacific Time Zone-->
+      <!-- Is monday yellow or red?  -->
+      <% if cellsInYellow_11?() %>
+        <td id="mon1Yellow"></td>
+      <% elsif cellsInRed_11?() %>
+        <td id="mon1Red"></td>
+      <% else %>
+        <td id="mon1" onclick="selectFunction('mon1','Monday','<%=@timesByZone.first%>')"></td>
+      <% end %>
+
+      <!-- Is tuesday yellow or red?  -->
+      <% if cellsInYellow_12?() %>
+        <td id="tue1Yellow"></td>
+      <% elsif cellsInRed_12?() %>
+        <td id="tue1Red"></td>
+      <% else %>
+        <td id="tue1" onclick="selectFunction('tue1','Tuesday','<%=@timesByZone.first%>')"></td>
+      <% end %>
+
+      <!-- Is wednesday yellow or red?  -->
+      <% if cellsInYellow_13?() %>
+        <td id="wed1Yellow"></td>
+      <% elsif cellsInRed_13?() %>
+        <td id="wed1Red"></td>
+      <% else %>
+        <td id="wed1" onclick="selectFunction('wed1','Wednesday','<%=@timesByZone.first%>')"></td>
+      <% end %>
+
+      <!-- Is thursday yellow or red?  -->
+      <% if cellsInYellow_14?() %>
+        <td id="thu1Yellow"></td>
+      <% elsif cellsInRed_14?() %>
+        <td id="thu1Red"></td>
+      <% else %>
+        <td id="thu1" onclick="selectFunction('thu1','Thursday','<%=@timesByZone.first%>')"></td>
+      <% end %>
+
     </tr>
     <tr>
       <td id="t2"><h4><%=@timesByZone.second%></h4></td>
-      <td id="mon2" onclick="selectFunction('mon2','Monday','1pm to 2pm')"></td>
-      <td id="tue2" onclick="selectFunction('tue2','Tuesday','1pm to 2pm')"></td>
-      <td id="wed2" onclick="selectFunction('wed2','Wednesday','1pm to 2pm')"></td>
-      <td id="thu2" onclick="selectFunction('thu2','Thursday','1pm to 2pm')"></td>
-    </tr>
+
+<!-- UTC TIME IN THIS COLUMN IS 20 -->
+ 
+      <!-- Is monday yellow or red?  -->
+      <% if cellsInYellow_21?() %>
+        <td id="mon2Yellow"></td>
+      <% elsif cellsInRed_21?() %>
+        <td id="mon2Red"></td>
+      <% else %>
+        <td id="mon2" onclick="selectFunction('mon2','Monday','<%=@timesByZone.second%>')"></td>
+      <% end %>
+
+      <!-- Is tuesday yellow or red?  -->
+      <% if cellsInYellow_22?() %>
+        <td id="tue2Yellow"></td>
+      <% elsif cellsInRed_22?() %>
+        <td id="tue2Red"></td>
+      <% else %>
+        <td id="tue2" onclick="selectFunction('tue2','Tuesday','<%=@timesByZone.second%>')"></td>
+      <% end %>
+
+      <!-- Is wednesday yellow or red?  -->
+      <% if cellsInYellow_23?() %>
+        <td id="wed2Yellow"></td>
+      <% elsif cellsInRed_23?() %>
+        <td id="wed2Red"></td>
+      <% else %>
+        <td id="wed2" onclick="selectFunction('wed2','Wednesday','<%=@timesByZone.second%>')"></td>
+      <% end %>
+
+      <!-- Is thursday yellow or red?  -->
+      <% if cellsInYellow_24?() %>
+        <td id="thu2Yellow"></td>
+      <% elsif cellsInRed_24?() %>
+        <td id="thu2Red"></td>
+      <% else %>
+        <td id="thu2" onclick="selectFunction('thu2','Thursday','<%=@timesByZone.second%>')"></td>
+      <% end %>
+
+   </tr>
     <tr>
       <td><h4><%=@timesByZone.third%></h4></td>
-      <td id="mon3" onclick="selectFunction('mon3','Monday','2pm to 3pm')"></td>
-      <td id="tue3" onclick="selectFunction('tue3','Tuesday','2pm to 3pm')"></td>
-      <td id="wed3" onclick="selectFunction('wed3','Wednesday','2pm to 3pm')"></td>
-      <td id="thu3" onclick="selectFunction('thu3','Thursday','2pm to 3pm')"></td>
-    </tr>
+
+<!-- UTC TIME IN THIS COLUMN IS 21 -->
+ 
+      <!-- Is monday yellow or red?  -->
+      <% if cellsInYellow_31?() %>
+        <td id="mon3Yellow"></td>
+      <% elsif cellsInRed_31?() %>
+        <td id="mon3Red"></td>
+      <% else %>
+        <td id="mon3" onclick="selectFunction('mon3','Monday','<%=@timesByZone.third%>')"></td>
+      <% end %>
+
+      <!-- Is tuesday yellow or red?  -->
+      <% if cellsInYellow_32?() %>
+        <td id="tue3Yellow"></td>
+      <% elsif cellsInRed_32?() %>
+        <td id="tue3Red"></td>
+      <% else %>
+        <td id="tue3" onclick="selectFunction('tue3','Tuesday','<%=@timesByZone.third%>')"></td>
+      <% end %>
+
+      <!-- Is wednesday yellow or red?  -->
+      <% if cellsInYellow_33?() %>
+        <td id="wed3Yellow"></td>
+      <% elsif cellsInRed_33?() %>
+        <td id="wed3Red"></td>
+      <% else %>
+        <td id="wed3" onclick="selectFunction('wed3','Wednesday','<%=@timesByZone.third%>')"></td>
+      <% end %>
+
+      <!-- Is thursday yellow or red?  -->
+      <% if cellsInYellow_34?() %>
+        <td id="thu3Yellow"></td>
+      <% elsif cellsInRed_34?() %>
+        <td id="thu3Red"></td>
+      <% else %>
+        <td id="thu3" onclick="selectFunction('thu3','Thursday','<%=@timesByZone.third%>')"></td>
+      <% end %>
+
+   </tr>
     <tr>
       <td><h4><%=@timesByZone.fourth%></h4></td>
-      <td id="mon4" onclick="selectFunction('mon4','Monday','3pm to 4pm')"></td>
-      <td id="tue4" onclick="selectFunction('tue4','Tuesday','3pm to 4pm')"></td>
-      <td id="wed4" onclick="selectFunction('wed4','Wednesday','3pm to 4pm')"></td>
-      <td id="thu4" onclick="selectFunction('thu4','Thursday','3pm to 4pm')"></td>
-    </tr>
+
+<!-- UTC TIME IN THIS COLUMN IS 22 -->
+ 
+      <!-- Is monday yellow or red?  -->
+      <% if cellsInYellow_41?() %>
+        <td id="mon4Yellow"></td>
+      <% elsif cellsInRed_41?() %>
+        <td id="mon4Red"></td>
+      <% else %>
+        <td id="mon4" onclick="selectFunction('mon4','Monday','<%=@timesByZone.fourth%>')"></td>
+      <% end %>
+
+      <!-- Is tuesday yellow or red?  -->
+      <% if cellsInYellow_42?() %>
+        <td id="tue4Yellow"></td>
+      <% elsif cellsInRed_42?() %>
+        <td id="tue4Red"></td>
+      <% else %>
+        <td id="tue4" onclick="selectFunction('tue4','Tuesday','<%=@timesByZone.fourth%>')"></td>
+      <% end %>
+
+      <!-- Is wednesday yellow or red?  -->
+      <% if cellsInYellow_43?() %>
+        <td id="wed4Yellow"></td>
+      <% elsif cellsInRed_43?() %>
+        <td id="wed4Red"></td>
+      <% else %>
+        <td id="wed4" onclick="selectFunction('wed4','Wednesday','<%=@timesByZone.fourth%>')"></td>
+      <% end %>
+
+      <!-- Is thursday yellow or red?  -->
+      <% if cellsInYellow_44?() %>
+        <td id="thu4Yellow"></td>
+      <% elsif cellsInRed_44?() %>
+        <td id="thu4Red"></td>
+      <% else %>
+        <td id="thu4" onclick="selectFunction('thu4','Thursday','<%=@timesByZone.fourth%>')"></td>
+      <% end %>
+
+   </tr>
     <tr>
       <td><h4><%=@timesByZone.fifth%></h4></td>
-      <td id="mon5" onclick="selectFunction('mon5','Monday','4pm to 5pm')"></td>
-      <td id="tue5" onclick="selectFunction('tue5','Tuesday','4pm to 5pm')"></td>
-      <td id="wed5" onclick="selectFunction('wed5','Wednesday','4pm to 5pm')"></td>
-      <td id="thu5" onclick="selectFunction('thu5','Thursday','4pm to 5pm')"></td>
+
+<!-- UTC TIME IN THIS COLUMN IS 23 -->
+ 
+      <!-- Is monday yellow or red?  -->
+      <% if cellsInYellow_51?() %>
+        <td id="mon5Yellow"></td>
+      <% elsif cellsInRed_51?() %>
+        <td id="mon5Red"></td>
+      <% else %>
+        <td id="mon5" onclick="selectFunction('mon5','Monday', '<%=@timesByZone.fifth%>')"></td>
+      <% end %>
+
+      <!-- Is tuesday yellow or red?  -->
+      <% if cellsInYellow_52?() %>
+        <td id="tue5Yellow"></td>
+      <% elsif cellsInRed_52?() %>
+        <td id="tue5Red"></td>
+      <% else %>
+        <td id="tue5" onclick="selectFunction('tue5','Tuesday','<%=@timesByZone.fifth%>')"></td>
+      <% end %>
+
+      <!-- Is wednesday yellow or red?  -->
+      <% if cellsInYellow_53?() %>
+        <td id="wed5Yellow"></td>
+      <% elsif cellsInRed_53?() %>
+        <td id="wed5Red"></td>
+      <% else %>
+        <td id="wed5" onclick="selectFunction('wed5','Wednesday','<%=@timesByZone.fifth%>')"></td>
+      <% end %>
+
+      <!-- Is thursday yellow or red?  -->
+      <% if cellsInYellow_54?() %>
+        <td id="thu5Yellow"></td>
+      <% elsif cellsInRed_54?() %>
+        <td id="thu5Red"></td>
+      <% else %>
+        <td id="thu5" onclick="selectFunction('thu5','Thursday','<%=@timesByZone.fifth%>')"></td>
+      <% end %>
+
     </tr>
   </table>
 </center>

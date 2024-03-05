@@ -48,9 +48,12 @@
      right in front of me in order for me to learn it.  We all learn in different ways, and I feel the
      best motivtion is to teach in a way that the student learns best.  My lessons are therefor very
      customizable.  There is no formula that I follow</p>
-
-  <h3><i>Sign up for initial lesson. First lesson is free!</i></h3>
-  <h2><%= link_to "Click here to schedule free initial lesson!", scheduler_timezone_path %></h2>
+  <% if logged_in? %>
+     <h3>Click here for status</h3>
+  <% else %>
+    <h3><i>Sign up for initial lesson. First lesson is free!</i></h3>
+    <h2><%= link_to "Click here to schedule free initial lesson!", scheduler_timezone_path %></h2>
+  <% end %>
 
   <h2>Math/Science Tutoring:</h2>
   <p>Algebra, trig, calculas, physics and high school level chemistry.  I am a science geek, teaching

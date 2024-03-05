@@ -7,6 +7,8 @@ gem "rails", "~> 7.1.3"
 gem "bootstrap-sass", "~> 3.4.1"
 gem "minitest", "~> 5.22", ">= 5.22.2"
 gem "minitest-reporters", "~> 1.1", ">= 1.1.11"
+gem "jquery-rails", "~> 4.4"
+gem "turbolinks"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
