@@ -10,6 +10,8 @@ gem "minitest-reporters", "~> 1.1", ">= 1.1.11"
 gem "jquery-rails", "~> 4.4"
 gem "turbolinks"
 
+gem "rails-controller-testing"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

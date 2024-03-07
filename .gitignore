@@ -57,6 +57,18 @@ public/
 storage/
 tmp/
 vendor/
+config/application.rb
+config/boot.rb
+config/cable.yml
+config/credentials.yml.enc
+config/database.yml
+config/environment.rb
+config/environments/
+config/importmap.rb
+config/initializers/
+config/locales/
+config/puma.rb
+config/storage.yml
 
 
 

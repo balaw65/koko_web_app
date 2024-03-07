@@ -78,6 +78,8 @@ class UsersController < ApplicationController
       log_in @user
       logger.debug "RECORD SAVED"
       flash.now[:success] = "Hope you are ready to have some fun!!!"
+      UserMailer.account_activation(@user).deliver_now
+ 
       # Not HERE!!!!!!!!!!!!  redirect_to user_url(@user)
       render 'welcome'
     else

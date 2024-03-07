@@ -1,13 +1,28 @@
 class SessionsController < ApplicationController
 
   def new
-    logger.debug "Session:  #{params[:session]}"
+    logger.debug "<><><><><><><><><><>Session:  #{params[:session]}!!!!!!!!!!!!!!!!1"
   end
 
   def create
 
-    user = User.find_by(email: params[:session][:email].downcase)
+    #######   DEBUGGING TESTING #########
+    logger.debug "===> params:  #{params}"
+    u = User.find_by(email: params[:session][:email])
+    if u
+        logger.debug "      user found"
+        if  u.authenticate(params[:session][:password])
+            logger.debug "      user authenticated"
+        else
+            logger.debug "      user NOT authenticated"          
+        end
+    else
+        logger.debug "      user NOT found"
+    end
+    ###################################################
 
+    user = User.find_by(email: params[:session][:email].downcase)
+    logger.debug "  user password: #{params[:session][:password]}"
     if user && user.authenticate(params[:session][:password])
        logger.debug "User is authenticated"
        log_in user
