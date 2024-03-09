@@ -10,7 +10,9 @@
         | ME!
       <% elsif current_user.admin? %>
         | <%= link_to "delete", user, method: :delete,
-                                      data: { confirm: "Confirm delete user" } %>
+                                      data: { confirm: "Confirm delete user" } %><br>
+      Status: <%= user.usertype %><br>
+      Email:  <%= user.email %>
       <% end %>
     </li>
   <% end %> 

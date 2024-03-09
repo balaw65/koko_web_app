@@ -96,13 +96,20 @@ class UsersController < ApplicationController
   end
   def update
     @user = User.find(params[:id])
+
+    logger.debug "------------------------------------"
     logger.debug "Update user with:  #{user_params}"
+    logger.debug "------------------------------------"
+
+
     if @user.update(user_params)
       flash[:success] = "Profile Updated"
       redirect_to @user
     else
       render 'edit'
     end
+
+
   end
   def index
     @users = User.all

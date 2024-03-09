@@ -45,7 +45,6 @@ app/channels/
 app/controllers/.*.swp
 app/controllers/concerns/
 app/jobs/
-app/mailers/
 app/models/concerns/
 bin/
 config.ru
@@ -63,7 +62,6 @@ config/cable.yml
 config/credentials.yml.enc
 config/database.yml
 config/environment.rb
-config/environments/
 config/importmap.rb
 config/initializers/
 config/locales/

@@ -19,12 +19,8 @@
       <%= f.text_field :name, class: 'form-control' %><br>
 
       <% if current_user.admin? %>
-         <h2>Current User is an Admin</h2>
          <%= f.label :usertype, "Current user type: " + @user.usertype %><br>
          <%= f.select :usertype, ["admin","guest","student","other"]%><br class="dbl_space">
-      <!-- DO NOT DISPLAY PASSORD FIELDS IF ADMIN UNLESS ADMIN IS CURRENT USER: -->
-         <%= f.password_field :password, value: "p4ssw0rdp4ssw0rd", type: "hidden" %>
-         <%= f.password_field :password_confirmation, value: "p4ssw0rdp4ssw0rd", type:"hidden" %>
       <% else %>
          <%= f.label :password %><br>
          <%= f.password_field :password, class: 'form-control' %>
