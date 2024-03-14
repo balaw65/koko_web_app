@@ -1,10 +1,4 @@
 <% provide(:title, "User") %>
-<!--
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>, <%= @user.email %>
-  </h1>
--->
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -18,5 +12,7 @@
       </p>
     </section>
   </aside>
-</div>
-
+</div><br>
+<!-- Do not think there is a way I can set variables 
+     before calendar is loaded, try this field in a form on a new page? -->
+Date: <input type="text" class="mydatepicker">

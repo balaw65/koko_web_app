@@ -32,10 +32,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # debugger
     logger.debug "-----> Call for user at id:  #{params[:id]}"
+    if current_user.admin? #@user[:admin]
+       redirect_to users_url
+    else
+       redirect_to(students_new_url)
+    end
 
-
-
-    @dayOfTheWeek = "Tuesday"
   end
   def new
     logger.debug "-----> new called"
@@ -56,20 +58,11 @@ class UsersController < ApplicationController
   end
   def create
 
-    logger.debug "A Debug Mssage: #{params[:user]}"
-    logger.debug "User params:    #{user_params}"
 
-    logger.debug "Creating user: "
-    logger.debug "               name:  #{user_params[:name]}"
-    logger.debug "         lesson day:  #{user_params[:lessonday]}"
-    logger.debug "     user time zone:  #{user_params[:timezone]}"
- 
     # user_params[:lessontime] = get_utc(user_params[:timezone], user_params[:lessontime])
     utc = get_utc(user_params[:timezone].to_s, user_params[:lessontime].to_s)
     params[:user][:lessontime] = utc
  
-    logger.debug "  -->lesson time (utc):  #{user_params[:lessontime]}"
-
  
     @user = User.new(user_params)
     @user.admin = false
@@ -100,12 +93,25 @@ class UsersController < ApplicationController
     logger.debug "------------------------------------"
     logger.debug "Update user with:  #{user_params}"
     logger.debug "------------------------------------"
-
+    s = Student.find_by(email:@user.email)
+    logger.debug "Student:  #{s}"
+ 
 
     if @user.update(user_params)
-      flash[:success] = "Profile Updated"
-      redirect_to @user
+      if s
+         if s.update(active:true)
+            flash[:success] = "Profile Updated"
+            redirect_to @user
+         else
+            flash[:danger] = "Problem updating student"
+            render 'edit'
+         end
+      else
+         flash[:success] = "Profile Updated"
+         redirect_to @user
+      end
     else
+      flash[:danger] = "Problem updating student"
       render 'edit'
     end
 
@@ -115,9 +121,18 @@ class UsersController < ApplicationController
     @users = User.all
   end
   def destroy
+
+    # TODO delete user/student from all of the other tables:
+
+    # find student in Student table and delete:
+    u = User.find(params[:id])
+    Student.find_by(email: u.email).destroy
+
+    # find user in User table and delete:
     User.find(params[:id]).destroy
     flash[:success] = "user deleted"
     redirect_to users_url
+
   end
 
   private

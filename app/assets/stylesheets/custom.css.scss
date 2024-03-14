@@ -42,9 +42,24 @@ textarea {
   background-color:yellow;
   color:red;
 }
+td.highlighted {
+  background-color:yellow;
+  font-weight:bold;
+}
+td.old {
+  background-color:gray;
+}
+td.disabled-date {
+  background-color:gray;
+}
+td.disabled {
+  background-color:gray;
+}
 p.instructions {
   margin-top: 30px;
-  padding-left: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+ 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.0em;
   font-weight:normal;
@@ -92,3 +107,5 @@ aside {
   margin-top: 45px;
   @include box_sizing;
 }
+
+

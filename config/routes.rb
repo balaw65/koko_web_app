@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'students/new'
+  get 'students/create'
+  get 'students/edit'
+  get 'students/destroy'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
@@ -27,6 +31,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
  
   resources :users
+  resources :students
   resources :schedulers
   resources :sessions
   resources :account_activations, only: [:edit]

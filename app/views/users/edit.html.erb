@@ -21,6 +21,14 @@
       <% if current_user.admin? %>
          <%= f.label :usertype, "Current user type: " + @user.usertype %><br>
          <%= f.select :usertype, ["admin","guest","student","other"]%><br class="dbl_space">
+         <% if current_student?(@user.email) %>
+            <p><b>Is it an activated student? <%= @student.active %></b></p>
+            <p><b>Desired starting date: <%= @student.startingdate %></b></p>
+            <p><b>Favorite genre: <%= @student.favoritegenre %></b></p>
+            <p><b>Interests: <%= @student.interests %></b></p>
+            <p><b>At level: <%= @student.currentlevel %></b></p>
+            <p><b>At lesson: <%= @student.currentlesson %></b></p>
+         <% end %>
       <% else %>
          <%= f.label :password %><br>
          <%= f.password_field :password, class: 'form-control' %>

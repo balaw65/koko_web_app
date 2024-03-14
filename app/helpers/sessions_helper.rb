@@ -22,7 +22,6 @@ module SessionsHelper
       end
     end
   end
-
   def student_user?
      session[:usertype] == "student"
   end

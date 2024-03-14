@@ -1,0 +1,36 @@
+<% provide(:title, "Student") %>
+
+lesson day of the week: <div id="lessonday"><%= @day %></div>
+
+
+  <p class="instructions">Hi <%= current_user.name %>, please fill out the following form and select the date
+                          you would like to start your first lesson. I will follow up with an additional email 
+                          with the zoom link<br><br>
+     Thanks again for taking an interest in guitar lessons!!<br></p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <!-- Set start day -->
+
+    <%= form_for(@student) do |f| %>
+       <%= f.text_field :active, value: false, type: "hidden" %><br>
+
+       <%= f.label :favoritegenre, "Genre most interested in: " %><br>
+       <%= f.select :favoritegenre, ["jazz","blues","rock","folk","country/country western","ragae","classical","other"]%><br class="dbl_space">
+
+       <%= f.label :interests, "Please tell me any songs you would like to learn: " %><br>
+       <%= f.text_area :interests, class: "enablecalendar", size: "50x5"%><br class="dbl_space">
+
+       <%= f.text_field :currentlevel, value: 1, type: "hidden" %>
+       <%= f.text_field :currentlesson, value: 1, type: "hidden" %>
+
+       <%= f.label :startingdate, "Desired start date: " %><br>
+       <%= f.text_field :startingdate, id: "startingdate", class: "mydatepicker", disabled:true %><br><br>
+
+
+       <%= f.submit "Submit", class: "btn btn-primary", id: "submitButton" %><br><br><br>
+    <% end %> 
+  </div>
+</div>
+
