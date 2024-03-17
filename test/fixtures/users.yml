@@ -1,0 +1,46 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+koko:
+  id: 1
+  name: Koko
+  email: bruce.koko.law@comcast.net
+  admin: true
+  usertype: "admin"
+  password_digest:  <%= User.digest('password') %>
+
+mary:
+  id: 2
+  name: Mary
+  email: mary@gmail.com
+  usertype: guest
+  password_digest: <%= User.digest('password') %>
+
+jesse:
+  id: 3
+  name: Jesse
+  email: jesse@gmail.com
+  usertype: student
+  password_digest: <%= User.digest('password') %>
+
+suzie:
+  id: 4
+  name: Suzie
+  email: suzie@gmail.com
+  usertype: guest
+  password_digest: <%= User.digest('password') %>
+
+
+# one:
+#   name: MyString
+#   email: MyString
+#   timezone: MyString
+#   lessontime: MyString
+#   lessonday: MyString
+#   usertype: MyString
+
+# two:
+#   name: MyString
+#   email: MyString
+#   timezone: MyString
+#   lessontime: MyString
+#   lessonday: MyString
+#   usertype: MyString

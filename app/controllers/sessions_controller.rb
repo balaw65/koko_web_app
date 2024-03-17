@@ -7,18 +7,18 @@ class SessionsController < ApplicationController
   def create
 
     #######   DEBUGGING TESTING #########
-    logger.debug "===> params:  #{params}"
-    u = User.find_by(email: params[:session][:email])
-    if u
-        logger.debug "      user found"
-        if  u.authenticate(params[:session][:password])
-            logger.debug "      user authenticated"
-        else
-            logger.debug "      user NOT authenticated"          
-        end
-    else
-        logger.debug "      user NOT found"
-    end
+#   logger.debug "===> params:  #{params}"
+#   u = User.find_by(email: params[:session][:email])
+#   if u
+#       logger.debug "      user found"
+#       if  u.authenticate(params[:session][:password])
+#           logger.debug "      user authenticated"
+#       else
+#           logger.debug "      user NOT authenticated"          
+#       end
+#   else
+#       logger.debug "      user NOT found"
+#   end
     ###################################################
 
     user = User.find_by(email: params[:session][:email].downcase)
@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
        log_in user
        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
        remember user
+       logger.debug ">>>>>>>>>>>>>>>> REDIRECTING TO USER"
        redirect_to user
     else
       # flash[:danger] = "Invalid email/passord combination"

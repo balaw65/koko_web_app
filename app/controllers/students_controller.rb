@@ -7,8 +7,10 @@ class StudentsController < ApplicationController
 
      begin
        if current_student.email
+          logger.debug ">>>>>>>Student has email!!!"
           render 'show'
        else
+          logger.debug ">>>>>>>Student has NO email!!!"
           @student       = Student.new
           @student.email = current_user.email
           @day           = current_user.lessonday

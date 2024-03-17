@@ -11,22 +11,50 @@ module ActiveSupport
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
 
+    
+
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all
+
+    def is_logged_in?
+      session[:id].nil?
+    end
+    def is_admin?
+      return $currentUser.admin
+    end
+    def is_guest?
+      puts "User type:  #{$currentUser.usertype}"
+      return $currentUser.usertype == 'guest'
+    end
+    def is_student?
+      puts "User type:  #{$currentUser.usertype}"
+      return $currentUser.usertype == 'student'
+    end
+
+
+    def login_in_as(user, options = {})
+      password       = options[:password]     || 'password'
+      remember_me    = options[:remember_me]  || '1'
+      # post login_path(email: user.email, password: user.password)
+      if integration_test?
+         post login_path(params: { session: {email:user.email, password:user.password} })
+      else
+         session[:user_id] = user.id
+         $currentUser = user
+      end
+    end
+
+    private
+       def integration_test?
+         defined?(post_via_redirect)
+       end
+
+
 
     def testHelper
       puts ">>>>>>>>  TEST HELPER"
     end
 
 
-    # Add more helper methods to be used by all tests here...
-    def sign_in_as(user)
-      # post login_path(email: user.email, password: user.password)
-      post login_path(params: { session: {email:user.email, password:user.password} })
-    end
-
-    def is_logged_in?
-      :session[:user_id].nil?
-    end
   end
 end

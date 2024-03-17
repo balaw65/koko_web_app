@@ -1,61 +1,37 @@
 class UsersController < ApplicationController
-#  before_action :logged_in_user, only: [:index, :edit, :update]
-#  before_action :logged_in_user, only: [:index, :edit, :update]
- 
-#  before_action :admin_user,   only: [:edit, :update]
+  before_action :logged_in_user_index, only: [:index] #, :edit, :update]
+  before_action :logged_in_user_edit, only: [:edit]
 
   Pacific_offset  = -8
   Mountain_offset = -7
   Central_offset  = -6
   Atlantic_offset = -5
 
-
-
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
-  end
-
-  def admin_user
-    @user = User.find(params[:id])
-    # Do not want this:  As admin, want to be able to edit
-    # any users profile:
-    # redirect_to(root_url) unless current_user?(@user)
-  end
-
   def show
-    # logger.debug "-----> show called"
-
     @user = User.find(params[:id])
-    # debugger
-    logger.debug "-----> Call for user at id:  #{params[:id]}"
-    if current_user.admin? #@user[:admin]
-       redirect_to users_url
+    if logged_in?
+      if current_user.admin? #@user[:admin]
+         redirect_to users_url
+      else
+         redirect_to(students_new_url)
+      end
     else
-       redirect_to(students_new_url)
+       redirect_to(root_url)
     end
-
   end
+
   def new
-    logger.debug "-----> new called"
-
-
-
     @timeslot= getScheduleTime()
     @zaTimeZone = @timeslot.third
     @zaLessonTime = @timeslot.first
     @zaLessonDay = @timeslot.second
  
     @user = User.new
- 
   end
+
   def welcome
-    logger.debug "-----> welcome called"
-    logger.debug @user
   end
+
   def create
 
 
@@ -84,19 +60,15 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
   def edit
     @user = User.find(params[:id])
   end
+
   def update
     @user = User.find(params[:id])
 
-    logger.debug "------------------------------------"
-    logger.debug "Update user with:  #{user_params}"
-    logger.debug "------------------------------------"
     s = Student.find_by(email:@user.email)
-    logger.debug "Student:  #{s}"
- 
-
     if @user.update(user_params)
       if s
          if s.update(active:true)
@@ -114,14 +86,12 @@ class UsersController < ApplicationController
       flash[:danger] = "Problem updating student"
       render 'edit'
     end
-
-
   end
+
   def index
     @users = User.all
   end
   def destroy
-
     # TODO delete user/student from all of the other tables:
 
     # find student in Student table and delete:
@@ -132,10 +102,9 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "user deleted"
     redirect_to users_url
-
   end
 
-  private
+private
 
   def user_params
     params.require(:user).permit(:name, :email, :timezone, :lessontime, :lessonday, :usertype, :password, :password_confirmation)
@@ -143,6 +112,63 @@ class UsersController < ApplicationController
 
   private
 
+  def redirect_to_root
+     redirect_to root_path
+  end
+
+  def logged_in_user_index
+     if logged_in?
+       if current_user.admin?
+          logger.debug "    ..........  USER IS AN ADMIN"
+          flash[:success] = "User is an admin"
+ 
+       else
+          logger.debug "    ..........  USER IS NOT AN ADMIN"
+          redirect_to root_path
+       end 
+     else
+       redirect_to root_path
+     end
+  end
+
+  def logged_in_user_edit
+     @user = User.find(params[:id])
+     if logged_in?
+       if current_user.admin?
+          logger.debug "    ..........  USER IS AN ADMIN"
+       elsif is_student?
+          logger.debug "    ..........  USER IS STUDENT"
+          redirect_to(root_url) unless current_user?(@user)
+       elsif is_guest?  # I think I want guest to edit their own profile???
+          logger.debug "    ..........  USER IS A GUEST"
+          redirect_to(root_url) unless current_user?(@user)
+       else
+          logger.debug "    ..........  USER IS PERHAPS A GUEST"
+          redirect_to root_path
+       end 
+     else
+        redirect_to root_path
+     end
+  end 
+
+  def is_student?
+    if current_user.usertype == "student"
+       return true
+    else
+       return false
+    end
+    false
+  end
+
+  def is_guest?
+    if current_user.usertype == "guest"
+       return true
+    else
+       return false
+    end
+    false
+  end
+ 
   def get_24hour(localtime)
     hour1 = localtime.match(/^[0-9]+/)
     hour1AmOrPm = localtime.match(/^[0-9]+.m/)
@@ -158,13 +184,9 @@ class UsersController < ApplicationController
     end
     return h1
   end 
+
   def get_utc(timezone, localtime)
-    logger.debug "======> User timezone  is:  #{timezone}"
-    logger.debug "======> User localtime is:  #{localtime}"
-
-
     localHour = get_24hour(localtime)
-    logger.debug "======> User localhour is   #{localHour}"
     utcHour = 0
     case timezone
        when 'pacific'
@@ -174,12 +196,8 @@ class UsersController < ApplicationController
        when 'central'
          utcHour = localHour - Central_offset
        when 'atlantic'
-         logger.debug "======> ATLANTIC TIME"
- 
          utcHour = localHour - Atlantic_offset
     end 
-    logger.debug "======> Returning utc hour:  ${utcHour}"
- 
     return utcHour
   end
 

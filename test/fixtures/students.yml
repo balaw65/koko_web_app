@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+mary:
+  email: mary@gmail.com
+  active: false
+
+jesse:
+  email: jesse@gmail.com
+  active: false
+
+suzie:
+  email: suzie@gmail.com
+  active: false
+
+
+
+one:
+  email: MyString
+  active: false
+  startdate: 2024-03-10
+  favoritegenre: MyString
+  interests: MyString
+  currentlevel: 1
+  currentlesson: 1
+
+two:
+  email: MyString
+  active: false
+  startdate: 2024-03-10
+  favoritegenre: MyString
+  interests: MyString
+  currentlevel: 1
+  currentlesson: 1

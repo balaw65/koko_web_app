@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timezone: MyString
+  lessontime: MyString
+  lessonday: MyString
+
+two:
+  timezone: MyString
+  lessontime: MyString
+  lessonday: MyString
