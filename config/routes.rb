@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'level1_lesson1/new'
+  get 'l1l1' => 'level1_lesson1#new'
+  post 'level1_lesson1/edit'
+
+ 
+  get 'level1_lesson1/show'
+  get 'level1_lesson1/edit'
+  get 'level1_lesson1/delete'
   get 'students/new'
   get 'students/create'
   get 'students/edit'

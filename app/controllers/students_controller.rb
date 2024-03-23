@@ -30,8 +30,11 @@ class StudentsController < ApplicationController
      logger.debug "GOT HERE AT STUDENTS SHOW URL"
   end
 
-  def show
+  def update
      logger.debug "GOT HERE AT STUDENTS UPDATE URL"
+     logger.debug "student is at level:  #{current_student.currentlevel}"
+     redirectToLesson(current_student.email, current_student.currentlevel, current_student.currentlesson)
+
   end
 
 
@@ -50,6 +53,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
+     logger.debug "GOT HERE AT STUDENTS EDIT URL"
   end
 
   def destroy
@@ -68,6 +72,17 @@ private
     else 
        return oldDate
     end
-
+  end
+  def redirectToLesson(semail, slevel, slesson)
+    case slevel
+       when 1
+          case slesson
+             when 1
+                redirect_to l1l1_url  # see config/routes.rb
+             when 2
+             when 3
+             when 4
+          end
+     end
   end
 end

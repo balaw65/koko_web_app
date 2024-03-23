@@ -107,5 +107,240 @@ aside {
   margin-top: 45px;
   @include box_sizing;
 }
+p.guitarParts{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:1.5em;
+  font-style:italic;
+  font-weight:bold;
+}
+a#handLink {
+  font-family:'Playfair Display';
+  font-size:1.5em;
+  font-style:italic;
+  font-weight:bold;
+}
+table.fullguitar {
+   background-image:image-url('LevelOne/fullguitar.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+table.soundboard {
+   background-image: image-url('LevelOne/soundboard_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+table.bridge {
+   background-image: image-url('LevelOne/bridge_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+
+table.saddle {
+   background-image: image-url('LevelOne/saddle_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+table.pickguard {
+   background-image: image-url('LevelOne/pickguard_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+table.fretboard {
+   background-image: image-url('LevelOne/fretboard_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+table.nut {
+   background-image: image-url('LevelOne/nut_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+table.tuningpegs {
+   background-image: image-url('LevelOne/tuningpegs_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+table.frets {
+   background-image: image-url('LevelOne/frets_wa.png');
+   background-repeat:no-repeat;
+   margin-top:20px;
+   margin-left:20px;
+}
+td.guitar {
+   min-width:155px;
+   height:75px;
+}
+td#r1c1 {
+   vertical-align:top;
+}
+td#r1c2 {
+   vertical-align:bottom;
+}
+td#r2c5 {
+   vertical-align:bottom;
+}
+
+td#r2c3 {
+   vertical-align:top;
+}
+td#r3c4 {
+   vertical-align:top;
+}
+td#r4c4 {
+   vertical-align:bottom;
+}
+td#r4c5 {
+   vertical-align:bottom;
+}
+td#r5c1 {
+   vertical-align:bottom;
+}
+td#r5c3 {
+   vertical-align:bottom;
+}
+table.bothhands {
+   background-image:image-url('LevelOne/both_hands.png');
+   background-repeat:no-repeat;
+   margin-left:20px;
+   //border: 2px solid blue;
+}
+td.hand {
+   min-width:85px;
+   height:85px;
+   //border: 1px solid gray;
+}
+td#hr1c2 {
+   vertical-align:center;
+   padding-left:45px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+td#hr1c3 {
+   vertical-align:center;
+   padding-left:45px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+td#hr2c1 {
+   vertical-align:top;
+   padding-left:45px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+td#hr2c4 {
+   vertical-align:top;
+   padding-left:45px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+td#hr3c5 {
+   vertical-align:bottom;
+   padding-left:25px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+
+td#hr1c7 {
+   vertical-align:center;
+   padding-left:50px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+td#hr1c8 {
+   vertical-align:center;
+   padding-left:50px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
 
 
+td#hr2c6 {
+   vertical-align:top;
+   padding-left:50px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+td#hr2c9 {
+   vertical-align:top;
+   padding-left:45px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+
+
+td#hr3c6 {
+   vertical-align:bottom;
+   padding-left:1px;
+   font-family: 'Playfair Display';
+   font-size: 1.5em;
+   font-style: italic;
+}
+
+
+
+
+div.ll1 {
+  height:100px;
+  p#l1l1Info {
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight:normal;
+  }
+}
+td#hands_button {
+    padding-left: 30px;
+}
+div.ll2 {
+  height:250px;
+  p#musicFont {
+    font-family:Noto;
+    font-size: 1.5em;
+    font-weight:normal;
+    color:#333333;
+
+    
+  }
+ 
+  p#l1l1s2Info {
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight:normal;
+  }
+  div#l1l1s2InfoBlue {
+    margin-top: 15px;
+    padding-left:100px; 
+    padding-right: 20px;
+ 
+    color:#3333ff;
+
+    font-family:Noto;
+    font-size: 1.3em;
+    font-weight:normal;
+  }
+
+}
