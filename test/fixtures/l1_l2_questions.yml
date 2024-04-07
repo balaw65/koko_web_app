@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  el_string: MyString
+  a_string: MyString
+  d_string: MyString
+  g_string: MyString
+  b_string: MyString
+  eh_string: MyString
+
+two:
+  email: MyString
+  el_string: MyString
+  a_string: MyString
+  d_string: MyString
+  g_string: MyString
+  b_string: MyString
+  eh_string: MyString

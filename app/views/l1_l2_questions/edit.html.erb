@@ -1,0 +1,79 @@
+<h1>Guitar Parts II: Review</h1>
+<h2>Label the guitar strings:</h2>
+<table id='stringsmaintable' class='guitarstrings'>
+  <tr>  <!-- Row 1 -->
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+  </tr>
+  <tr>  <!-- Row 2 -->
+    <td class='strings' rowspan='4' colspan='9' id='l1l2r2c1'>
+        <div id='musical_notes' hidden>DISPLAY STAFF HERE!</div>
+    </td>
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td>
+  </tr>
+  <tr id='strs'>  <!-- Row 3 -->
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td>
+  </tr>
+  <tr>  <!-- Row 4 -->
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td>
+ 
+  </tr>
+  <tr>  <!-- Row 5 -->
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td>
+ 
+  </tr>
+  <tr>  <!-- Row 6 -->
+<%= form_for(@l1_l2_question) do |f| %>
+
+   <%= f.text_field :email, value: "tbd", type: "hidden" %><br>
+
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'><td class='strings'></td>
+        <td id='l1l2Rr6c6' class='strings'><div class=<%= @l1_l2_errors[:el_string] %> style='width:30px'><%= f.text_field:el_string,size:1,maxlength:1,:style=>"width:28px"%></div></td>
+        <td id='l1l2Rr6c7' class='strings'><div class=<%= @l1_l2_errors[:a_string] %> style='width:30px'><%= f.text_field:a_string,size:1,maxlength:1,:style=>"width:28px"%></div></td>
+        <td id='l1l2Rr6c8' class='strings'><div class=<%= @l1_l2_errors[:d_string] %> style='width:30px'><%= f.text_field:d_string,size:1,maxlength:1,:style=>"width:28px"%></div></td>
+        <td id='l1l2Rr6c9' class='strings'><div class=<%= @l1_l2_errors[:g_string] %> style='width:30px'><%= f.text_field:g_string,size:1,maxlength:1,:style=>"width:28px"%></div></td>
+        <td id='l1l2Rr6c10' class='strings'><div class=<%= @l1_l2_errors[:b_string] %> style='width:30px'><%= f.text_field:b_string,size:1,maxlength:1,:style=>"width:28px"%></div></td>
+        <td id='l1l2Rr6c11' class='strings'><div class=<%= @l1_l2_errors[:eh_string] %> style='width:30px'><%= f.text_field:eh_string,size:1,maxlength:1,:style=>"width:28px"%></div></td>
+    <td id='l1l2Rr6c12' class='strings' colspan='4'><%= f.submit "Submit", class: "btn btn-primary", id: "submitButton" %></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td>
+
+  </tr>
+  <tr>  <!-- Row 7 -->
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+ 
+  </tr>
+  <tr>  <!-- Row 8 -->
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+  </tr>
+  <tr>  <!-- Row 9 -->
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+  </tr>
+  <tr>  <!-- Row 10 -->
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+    <td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td><td class='strings'></td>
+  </tr>
+
+<center></center><br><br><br>
+
+<% end %>
+ 

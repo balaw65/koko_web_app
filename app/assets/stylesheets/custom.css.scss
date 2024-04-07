@@ -178,6 +178,49 @@ td.guitar {
    min-width:155px;
    height:75px;
 }
+.is_wrong {
+   width: 113px;
+   border: 3px solid red;
+}
+.is_correct {
+   width: 111px;
+   border: 2px solid green;
+}
+
+.is_not_graded {
+   border: 1px solid blue;
+}
+.iswrong {
+   border: 2px solid red;
+   background-color:red;
+   display:flex;
+}
+.iscorrect {
+   border: 1px solid green;
+   background-color:green;
+   display:flex;
+}
+.isnotgraded {
+   display:flex;
+}
+
+
+
+.is_wrong_finger {
+   width: 33px;
+   border: 3px solid red;
+}
+.is_correct_finger {
+   width: 32px;
+   border: 2px solid green;
+}
+.is_not_graded_finger {
+   width: 32px;
+   border: 1px solid blue;
+}
+
+
+
 td#r1c1 {
    vertical-align:top;
 }
@@ -319,7 +362,6 @@ div.ll2 {
     font-weight:normal;
     color:#333333;
 
-    
   }
  
   p#l1l1s2Info {
@@ -335,6 +377,15 @@ div.ll2 {
     margin-top: 15px;
     padding-left:100px; 
     padding-right: 20px;
+ 
+    color:#3333ff;
+
+    font-family:Noto;
+    font-size: 1.3em;
+    font-weight:normal;
+  }
+  a:link.lesson2QuizLink {
+    padding-left:50px; 
  
     color:#3333ff;
 

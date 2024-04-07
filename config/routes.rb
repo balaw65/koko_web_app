@@ -1,12 +1,57 @@
 Rails.application.routes.draw do
+  get 'l1_l1_questions/new'
+  get 'l1_l1_questions/edit'
+  get 'l1_l1_questions/show'
+  post 'l1_l1_questions/edit'
+
+  get 'l1_l2_questions/new'
+  get 'l1_l2_questions/show'
+  get 'l1_l2_questions/edit'
+  post 'l1_l2_questions/edit'
+
+  get 'l1_l3_questions/new'
+  get 'l1_l3_questions/show'
+  get 'l1_l3_questions/edit'
+  get 'l1_l3_questions/create'
+  post 'l1_l3_questions/edit'
+
+  get 'l1_l4_questions/new'
+  get 'l1_l4_questions/show'
+  get 'l1_l4_questions/edit'
+  get 'l1_l4_questions/create'
+
+  get 'l1_l5_questions/new'
+  get 'l1_l5_questions/show'
+  get 'l1_l5_questions/edit'
+  get 'l1_l5_questions/create'
+
   get 'level1_lesson1/new'
   get 'l1l1' => 'level1_lesson1#new'
-  post 'level1_lesson1/edit'
 
+
+  get 'l1l2' => 'l1_l2_questions#show'
+  get 'l1l2review' => 'l1_l2_questions#edit'
+
+  get 'l1l3' => 'l1_l3_questions#show'
+  get 'l1l3review' => 'l1_l3_questions#edit'
+
+  get 'l1l4' => 'l1_l4_questions#show'
+ 
+  get 'l1l5' => 'l1_l5_questions#show'
  
   get 'level1_lesson1/show'
   get 'level1_lesson1/edit'
   get 'level1_lesson1/delete'
+
+  get 'level1_lesson2/show'
+  get 'level1_lesson2/edit'
+  get 'level1_lesson2/delete'
+
+  get 'level1_lesson3/show'
+  get 'level1_lesson3/edit'
+  get 'level1_lesson3/delete'
+
+
   get 'students/new'
   get 'students/create'
   get 'students/edit'
@@ -39,6 +84,11 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
  
   resources :users
+
+  resources :l1_l1_questions
+  resources :l1_l2_questions
+  resources :l1_l3_questions
+ 
   resources :students
   resources :schedulers
   resources :sessions

@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  currenttopic: 1
+  lessoncomplete: false
+  topic1: MyString
+  topic2: MyString
+  topic3: MyString
+  topic4: MyString
+  topic5: MyString
+  topic6: MyString
+  topic7: MyString
+  topic8: MyString
+  topic9: MyString
+  topic10: MyString
+  topic11: MyString
+  finaltest: MyString
+
+two:
+  email: MyString
+  currenttopic: 1
+  lessoncomplete: false
+  topic1: MyString
+  topic2: MyString
+  topic3: MyString
+  topic4: MyString
+  topic5: MyString
+  topic6: MyString
+  topic7: MyString
+  topic8: MyString
+  topic9: MyString
+  topic10: MyString
+  topic11: MyString
+  finaltest: MyString

@@ -4,6 +4,7 @@
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require studentscripts
+//= require level1.js
 //= require_tree .
 
 

@@ -1,0 +1,163 @@
+
+<h1>Lesson1: Review</h1>
+
+<%= form_for(@l1_l1_question) do |f| %>
+
+<%= render 'shared/error_messages_l1l1' %>
+<%= f.text_field :email, value: "tbd", type: "hidden" %><br>
+
+<table id='guitar' class='frets'>
+  <tr>
+    <td id='r1c1' class='guitar'>
+       <div class=<%= @l1_l1_errors[:sound_board] %>>
+          <%= f.select :sound_board, ["capo","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not listed"] %>
+       </div>
+    </td>
+    <td id='r1c2' class='guitar'>
+       <div class=<%= @l1_l1_errors[:bridge] %>>
+          <%= f.select :bridge, ["guitar pick","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not listed"] %>
+       </div>
+    </td>
+    <td class='guitar'></td><td class='guitar'></td><td class='guitar'></td>
+  </tr>
+  <tr>
+    <td class='guitar'></td><td class='guitar'></td>
+    <td id='r2c3' class='guitar'>
+       <div class=<%= @l1_l1_errors[:sound_hole] %>>
+          <%= f.select :sound_hole, ["heel","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not lested"] %>
+       </div>
+    </td>
+    <td class='guitar'></td>
+    <td id='r2c5' class='guitar'>
+       <div class=<%= @l1_l1_errors[:tuning_pegs] %>>
+          <%= f.select :tuning_pegs, ["capo","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not lested"] %>
+       </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='guitar'></td><td class='guitar'></td><td class='guitar'></td>
+    <td id='r3c4' class='guitar'>
+       <div class=<%= @l1_l1_errors[:frets] %>>
+          <%= f.select :frets, ["capo","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not lested"] %>
+       </div>
+    </td>
+    <td class='guitar'></td>
+  </tr>
+  <tr>
+    <td class='guitar'></td><td class='guitar'></td><td class='guitar'></td>
+    <td id='r4c4' class='guitar'>
+       <div class=<%= @l1_l1_errors[:fret_board] %>>
+          <%= f.select :fret_board, ["capo","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not lested"] %>
+       </div>
+    </td>
+    <td id='r4c5' class='guitar'>
+       <div class=<%= @l1_l1_errors[:nut] %>>
+          <%= f.select :nut, ["capo","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not lested"] %>
+       </div>
+    </td>
+  </tr>
+  <tr>
+    <td id='r5c1' class='guitar'>
+       <div class=<%= @l1_l1_errors[:saddle] %>>
+          <%= f.select :saddle, ["capo","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not lested"] %>
+       </div>
+    </td>
+    <td class='guitar'></td>
+    <td id='r5c3' class='guitar'>
+       <div class=<%= @l1_l1_errors[:pick_guard] %>>
+          <%= f.select :pick_guard, ["capo","sound board","sound hole","bridge","saddle","pick guard","fret board","nut","tuning pegs","frets","not lested"] %>
+       </div>
+    </td>
+    <td class='guitar'></td><td class='guitar'></td>
+  </tr>
+  <tr>
+    <td id='r6c1' class='guitar'></td><td id='r6c2' class='guitar'></td><td class='guitar'></td><td class='guitar'></td><td class='guitar'></td>
+  </tr>
+</table><br>
+<table id='myLeftHand' class='bothhands'>
+  <tr>
+    <td class='hand'></td>
+    <td id='hr1c2' class='hand'>
+       <div class=<%= @l1_l1_errors[:finger_3] %>>
+          <%= f.text_field:finger_3,size:1,maxlength:1,:style=>"width:28px"%>
+       </div>
+    </td>
+    <td id='hr1c3' class='hand'>
+       <div class=<%= @l1_l1_errors[:finger_2] %>>
+          <%= f.text_field:finger_2,size:1,maxlength:1,:style=>"width:28px"%>
+       </div>
+    </td>
+    <td class='hand'></td><td class='hand'></td>
+    <td class='hand'></td>
+    <td class='hand' id='hr1c7'>
+       <div class=<%= @l1_l1_errors[:finger_m] %>>
+          <%= f.text_field:finger_m,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand' id='hr1c8'>
+       <div class=<%= @l1_l1_errors[:finger_a] %>>
+          <%= f.text_field:finger_a,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand'></td><td class='hand'></td>
+  </tr>
+  <tr>
+    <td class='hand' id='hr2c1'>
+       <div class=<%= @l1_l1_errors[:finger_4] %>>
+         <%= f.text_field:finger_4,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand'></td><td class='hand'></td>
+    <td id='hr2c4' class='hand'>
+       <div class=<%= @l1_l1_errors[:finger_1] %>>
+          <%= f.text_field:finger_1,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand'></td>
+    <td class='hand' id='hr2c6'>
+       <div class=<%= @l1_l1_errors[:finger_i] %>>
+          <%= f.text_field:finger_i,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand'></td><td class='hand'></td>
+    <td class='hand' id='hr2c9'>
+       <div class=<%= @l1_l1_errors[:finger_c] %>>
+          <%= f.text_field:finger_c,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand'></td>
+  </tr>
+  <tr>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+    <td id='hr3c5' class='hand'>
+       <div class=<%= @l1_l1_errors[:finger_t] %>>
+          <%= f.text_field:finger_t,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand' id='hr3c6'>
+       <div class=<%= @l1_l1_errors[:finger_p] %>>
+          <%= f.text_field:finger_p,size:1,maxlength:1,:style=>"width:28px" %>
+       </div>
+    </td>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+  </tr>
+  <tr>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+  </tr>
+  <tr>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+  </tr>
+  <tr>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+    <td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td><td class='hand'></td>
+  </tr>
+</table><br>
+<center><%= f.submit "Submit", class: "btn btn-primary", id: "submitButton" %></center><br><br><br>
+ 
+<% end %>
+<br><br><br>
+
+
+

@@ -1,0 +1,187 @@
+
+div.guitarChordContainer {
+  display:flex;
+  width:500px;
+}
+
+
+
+div.guitarStaffLines {
+  position:relative; 
+  h2 {
+    font-size:1.7em;
+    font-weight:bold;
+  } 
+}
+div.guitarStaffLines {
+  position:relative; 
+  h2 {
+    font-size:1.7em;
+    font-weight:bold;
+  } 
+}
+
+div.guitarStaffDotsLeft {
+  position:relative; 
+  flex-grow:1;
+  top:60px;
+  left:-268px;
+}
+div.guitarStaffDotsLeft {
+  position:relative; 
+  flex-grow:1;
+  top:60px;
+  left:-268px;
+}
+div.guitarStaffDotsMiddle {
+  position:relative; 
+  flex-grow:1;
+  top:60px;
+  left:-265px;
+}
+div.guitarStaffDotsRight {
+  position:relative; 
+  flex-grow:1;
+  top:60px;
+  //top:360px;
+  left:-263px;
+  width:330px;
+}
+
+
+
+
+div.chordIntructions {
+   width:600;
+   p {
+      font-family:Noto;
+      font-size:1.5em;
+      font-weight:normal;
+   }
+}
+table.guitarChords {
+   margin-left:60px;
+   //border: 2px solid black;
+}
+table#indentTable {
+   margin-left:60px;
+}
+
+table.guitarStaff {
+  //border: 1px solid black;
+  tr.staffRow {
+    td#headerInfo {
+       font-family:Noto;
+       font-size:1.3em;
+    }
+    td#staffStart {
+       text-align:right;
+       font-family:Noto;
+       font-size:6.0em;
+    }
+    td#measureStart {
+       text-align:center;
+       font-family:Noto;
+       font-size:6.0em;
+    }
+    td#timeSigN {
+       font-family:Noto;
+       font-size:2.5em;
+       font-weight:bold;
+       vertical-align:bottom;
+    }
+    td#timeSigD {
+       font-family:Noto;
+       font-size:2.5em;
+       font-weight:bold;
+       vertical-align:top;
+    }
+    td#beat {
+       font-family:Noto;
+       font-size:8.5em;
+       font-weight:normal;
+    }
+    td.staffCol {
+       width:60px;
+       text-align:center;
+       //border: 1px solid blue;
+    }
+  }
+}
+tr.zeroFret {
+   border-top: 5px solid black;
+}
+td.chords {
+   width:40px;
+   height:70px;
+   vertical-align:center;
+   text-align:center;
+   font-family:Noto;
+   font-size:6.0em;
+   font-weight:bold;
+   border: 1px solid black;
+}
+td.stringsTopLegend {
+   width:40px;
+   height:70px;
+   vertical-align:bottom;
+   text-align:center;
+   font-family:Noto;
+   font-size:1.0em;
+   font-weight:normal;
+   //border: 1px solid blue;
+}
+td.stringsTLegend {
+   width:40px;
+   height:70px;
+   //border: 1px solid green;
+}
+
+td.dots {
+   width:40px;
+   height:70px;
+   vertical-align:center;
+   text-align:center;
+   font-family:Noto;
+   font-size:1.5em;
+   font-weight:normal;
+   //border: 1px solid red;
+}
+td.stringlegend {
+   width:40px;
+   height:70px;
+   vertical-align:center;
+   text-align:center;
+   font-family:Noto;
+   font-size:1.7em;
+   font-weight:normal;
+   //border: 1px solid red;
+}
+td.fretlegend {
+   width:40px;
+   height:70px;
+   vertical-align:center;
+   text-align:right;
+   font-family:Noto;
+   font-size:1.5em;
+   font-weight:normal;
+   //border: 1px solid red;
+}
+
+td.threeChords {
+//   border: 1px solid blue;
+}
+td.tableInstructions {
+   vertical-align:top;
+   padding-left:60px;
+}
+tr.strumPattern {
+   font-family:Noto;
+   font-size:4.0em;
+}
+tr.count {
+   font-family:Noto;
+   font-size:2.0em;
+   text-align:center;
+}
+

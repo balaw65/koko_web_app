@@ -1,0 +1,91 @@
+<br><h1>Music Theory I, review:</h1>
+
+<%= form_for(@l1_l3_question) do |f| %>
+<table id='circleOfFifthsCGD' class='l1l3review'>
+
+
+   <%= f.text_field :email, value: "tbd", type: "hidden" %><br>
+
+
+  <tr>  <!-- Row 1 -->
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+  </tr>
+  <tr>  <!-- Row 2 -->
+    <td id='l1l3Rr2c1' class='cofs' rowspan=4 colspan=7>
+       The circle of 5ths depicts the <br>
+       <%= f.text_field:majorkeys,size:1,maxlength:2,:style=>"width:35px"%> major keys and
+       the <%= f.text_field:minorkeys,size:1,maxlength:2,:style=>"width:35px"%> minor keys<br><br>
+ 
+       The three major chords of the
+       key of G are?<br>
+       <div class=<%= @l1_l3_errors[:major_chord_i] %> style='width:40px;padding-top:3px;padding-bottom:3px;'>
+          <%= f.text_field:major_chord_i,size:1,maxlength:1,:style=>"width:36px"%>&nbsp;&nbsp;(I)
+       </div>
+       <div class=<%= @l1_l3_errors[:major_chord_iv] %> style='width:40px;padding-top:3px;padding-bottom:3px'>
+          <%= f.text_field:major_chord_iv,size:1,maxlength:1,:style=>"width:36px;"%>&nbsp;&nbsp;(IV)
+       </div>
+       <div class=<%= @l1_l3_errors[:major_chord_v] %> style='width:40px;padding-top:3px;padding-bottom:3px'>
+          <%= f.text_field:major_chord_v,size:1,maxlength:1,:style=>"width:36px"%>&nbsp;&nbsp;(V)
+       </div>
+
+       For a particular song, to switch the entire<br>song to another key is called:<br>
+       <%= f.select :transpose, ["Transfer","Transpose","Scale","Cannot be done"]%>
+       <br><br><%= f.submit "Submit", class: "btn btn-primary" %>
+    </td>
+    <td id='l1l3Rr2c5' class='cofs' colspan=2>
+      <div class=<%= @l1_l3_errors[:key_of_c] %> style='width:39px'>
+         <%= f.text_field:key_of_c,size:1,maxlength:1,:style=>"width:35px"%></td>
+      </div>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+  </tr>
+  <tr>  <!-- Row 3 -->
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td id='l1l3Rr3c3' class='cofs' colspan=3>
+      <div class=<%= @l1_l3_errors[:key_of_g] %> style='width:39px'>
+         <%= f.text_field:key_of_g,size:1,maxlength:1,:style=>"width:35px"%>
+      </div>
+    </td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+  </tr>
+  <tr>  <!-- Row 4 -->
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td id='l1l3Rr4c5' class='cofs' colspan=3>
+      <div class=<%= @l1_l3_errors[:key_of_d] %> style='width:39px'>
+         <%= f.text_field:key_of_d,size:1,maxlength:1,:style=>"width:35px"%>
+      </div>
+    </td>
+  </tr>
+  <tr>  <!-- Row 5 -->
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+    <td class='cofs'></td>
+  </tr>
+</table><br>
+<% end %>
+

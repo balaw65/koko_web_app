@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  sound_board: MyString
+  sound_hole: MyString
+  bridge: MyString
+  saddle: MyString
+  tuning_pegs: MyString
+  frets: MyString
+  fret_board: MyString
+  nut: MyString
+  pick_guard: MyString
+  finger_1: MyString
+  finger_2: MyString
+  finger_3: MyString
+  finger_4: MyString
+  finger_t: MyString
+  finger_m: MyString
+  finger_a: MyString
+  finger_i: MyString
+  finger_c: MyString
+  finger_p: MyString
+
+two:
+  email: MyString
+  sound_board: MyString
+  sound_hole: MyString
+  bridge: MyString
+  saddle: MyString
+  tuning_pegs: MyString
+  frets: MyString
+  fret_board: MyString
+  nut: MyString
+  pick_guard: MyString
+  finger_1: MyString
+  finger_2: MyString
+  finger_3: MyString
+  finger_4: MyString
+  finger_t: MyString
+  finger_m: MyString
+  finger_a: MyString
+  finger_i: MyString
+  finger_c: MyString
+  finger_p: MyString

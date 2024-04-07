@@ -53,6 +53,12 @@ class UsersController < ApplicationController
       render 'welcome'
     else
       logger.debug "RECORD FAILED"
+      logger.debug "Error count:  #{@user.errors.count}";
+      if @user.errors.count > 0
+         @user.errors.full_messages.each do |m|
+           logger.debug m
+         end
+      end
       @zaTimeZone = params[:user][:timezone]
       @zaLessonTime = params[:user][:lessontime]
       @zaLessonDay = params[:user][:lessonday]
@@ -110,7 +116,6 @@ private
     params.require(:user).permit(:name, :email, :timezone, :lessontime, :lessonday, :usertype, :password, :password_confirmation)
   end
 
-  private
 
   def redirect_to_root
      redirect_to root_path

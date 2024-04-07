@@ -1,0 +1,283 @@
+<br><h1>L1 Lesson Four: Guitaring, Finally!!</h1>
+
+<table class='threeGuitarChords'>
+   <tr>
+      <td class='threeChords'>
+        <div class='guitarStaffLines'>
+        <h2>The G chord (I):</h2>
+          <table class='guitarChords'>
+            <tr> <!-- Legend at Top -->
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+            </tr> <!--Fret zero -->
+            <tr class='zeroFret'>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret one  -->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret two  -->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret three-->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr>
+          </table>
+        </div>
+        <div class='guitarStaffDots'>
+          <table class='guitarChords'>
+            <tr> <!-- Legend at top -->
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'>E</td>
+              <td class='stringsTopLegend'>A</td>
+              <td class='stringsTopLegend'>D</td>
+              <td class='stringsTopLegend'>G</td>
+              <td class='stringsTopLegend'>B</td>
+              <td class='stringsTopLegend'>e</td>
+            </tr>
+            <tr> <!-- Fret one      -->
+              <td class='fretlegend'>1</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+            <tr> <!-- Fret two      -->
+              <td class='fretlegend'>2</td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2776</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+            <tr> <!-- Fret three    -->
+              <td class='fretlegend'>3</td>
+              <td class='dots'>&#x2777</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2778</td>
+            </tr>
+            <tr> <!-- Fret four    -->
+              <td class='fretlegend'>4</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class='threeChords'>
+        <div class='guitarStaffLines'>
+        <h2>The C chord (IV):</h2>
+          <table class='guitarChords'>
+            <tr> <!-- Legend at Top -->
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+            </tr> <!--Fret zero -->
+            <tr class='zeroFret'>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret one  -->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret two  -->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret three-->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret four -->
+          </table>
+        </div>
+        <div class='guitarStaffDots'>
+          <table class='guitarChords'>
+            <tr> <!-- Legend at top -->
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'>x</td>
+              <td class='stringsTopLegend'>A</td>
+              <td class='stringsTopLegend'>D</td>
+              <td class='stringsTopLegend'>G</td>
+              <td class='stringsTopLegend'>B</td>
+              <td class='stringsTopLegend'>e</td>
+            </tr>
+            <tr> <!-- Fret one      -->
+              <td class='fretlegend'>1</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2776</td>
+            </tr>
+            <tr> <!-- Fret two      -->
+              <td class='fretlegend'>2</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2777</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+            <tr> <!-- Fret three    -->
+              <td class='fretlegend'>3</td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2778</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+            <tr> <!-- Fret four    -->
+              <td class='fretlegend'>4</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+          </table>
+        </div>
+     </td>
+     <td class='threeChords'>
+        <div class='guitarStaffLines'>
+        <h2>The D chord (V):</h2>
+          <table class='guitarChords'>
+            <tr> <!-- Legend at Top -->
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'></td>
+            </tr> <!--Fret zero -->
+            <tr class='zeroFret'>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret one  -->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret two  -->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret three-->
+            <tr>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+              <td class='chords'></td>
+            </tr> <!--Fret four -->
+          </table>
+        </div>
+        <div class='guitarStaffDots'>
+          <table class='guitarChords'>
+            <tr> <!-- Legend at top -->
+              <td class='stringsTopLegend'></td>
+              <td class='stringsTopLegend'>x</td>
+              <td class='stringsTopLegend'>x</td>
+              <td class='stringsTopLegend'>D</td>
+              <td class='stringsTopLegend'>G</td>
+              <td class='stringsTopLegend'>B</td>
+              <td class='stringsTopLegend'>e</td>
+            </tr>
+            <tr> <!-- Fret one      -->
+              <td class='fretlegend'>1</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+            <tr> <!-- Fret two      -->
+              <td class='fretlegend'>2</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2776</td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2777</td>
+            </tr>
+            <tr> <!-- Fret three    -->
+              <td class='fretlegend'>3</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'>&#x2778</td>
+              <td class='dots'></td>
+            </tr>
+            <tr> <!-- Fret four    -->
+              <td class='fretlegend'>4</td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+              <td class='dots'></td>
+            </tr>
+          </table>
+        </div>
+     </td>
+   </tr>
+</table>
+<div class='chordIntructions'>
+<p>The above is typical of chord diagrams found in sheet music.
+</p>
+</div>
